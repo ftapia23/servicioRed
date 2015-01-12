@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:	  Documento de capacitación empresa Jaguar
+%Elaboró: TAPIA MUJICA FERNANDO
+%Revisó:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage[x11names,table]{xcolor}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amsthm, amsfonts}
+%%%%%%%%
+%%\renewcommand\tocbibname{Referencias}
+\usepackage[nottoc]{tocbibind}
+%%%%%%%%
+
+%%%%%%%%
+%%Libreria de colores, y definición de nuevos
+\usepackage{color}
+\definecolor{grisClaro}{gray}{0.95}
+\definecolor{naranja}{rgb}{1,0.5,0}
+%%%%%%%%
+
+%%%%%%%
+%%Item de colores (Azul)
+\usepackage{tikz}
+\usepackage{enumitem}
+\newcommand*{\itembolasazules}[1]{%
+\footnotesize\protect\tikz[baseline=-3pt]%
+\protect\node[scale=.5, circle, shade, ball color=blue]{\color{white}\Large\bf#1};}
+%%%%%%%
+
+%%%%%%%
+%%Modificar Margenes
+\usepackage{anysize}
+\marginsize{2.5cm}{2.5cm}{2cm}{2.5cm}
+%%%%%%%%
+\begin{document}
+\include{portada}
+	\tableofcontents
+\include{desarrollo}
+\include{bibliografia}
+
+\end{document}

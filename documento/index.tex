@@ -1,13 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Título:	  Documento de capacitación empresa Jaguar
+% Título:	  Documento de análisis Servidor DHCP
 %Elaboró: TAPIA MUJICA FERNANDO
-%Revisó:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage{color}
+
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+\definecolor{babyblueeyes}{rgb}{0.63, 0.79, 0.95}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
 
 \usepackage[x11names,table]{xcolor}
 \usepackage[T1]{fontenc}
@@ -39,6 +48,26 @@
 \usepackage{anysize}
 \marginsize{2.5cm}{2.5cm}{2cm}{2.5cm}
 %%%%%%%%
+
+\usepackage{listings}
+
+% minimizar fragmentado de listados
+% Fracción para elementos que semejan comandos en consola.
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily,
+backgroundcolor=\color{gray75},
+}
+%%%%%%%%%%%%
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\color{ballblue}\normalfont\Large\bfseries}
+{\color{ballblue}\thesection.}{1em}{}
+
 \begin{document}
 \include{portada}
 	\tableofcontents

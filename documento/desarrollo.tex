@@ -43,6 +43,15 @@ Como se mencionó anteriormente, los clientes de DHCP se presentan al servidor i
 	\end{itemize}
 
 Ésta última es más flexible que la primera, pues si se cambia la tarjeta de red, el cliente se identificaría con otra MAC, lo cual no sucedería con la opción client identifier.\\\\
+
+\begin{figure}
+ \centering
+  \includegraphics[width=0.7\textwidth]{img/ejemplo}
+  \caption{Gráfica DHCP}
+  \label{fig:10}
+\end{figure}
+
+
 El servidor DHCP para identificar a los clientes utiliza la información anterior junto con la dirección del segmento de red al que pertenece el cliente, por lo que en realidad, sólo se exige que la opción client identifier sea diferente dentro de cada segmento de red.\\
 En el documento RFC 2131, las operaciones que un cliente DHCP puede realizar se describen como un máquina de transición de estados, la cual se muestra en la siguiente diagrama.\\
 

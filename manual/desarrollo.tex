@@ -1,14 +1,49 @@
-\section{Supuestos}
+\section{Introducción.}
+Recordando, un servidor DHCP es un servidor que recibe peticiones de clientes solicitando una configuración de red IP. El servidor responderá a dichas peticiones proporcionando los parámetros que permitan a los clientes autoconfigurarse. Para que un PC solicite la configuración a un servidor, en la configuración de red de los PCs hay que seleccionar la opción 'Obtener dirección IP automáticamente'.\\
+
+El servidor proporcionará al cliente al menos los siguientes parámetros: 
+	
+	\begin{itemize}
+		\item Dirección IP.
+		\item Máscara de Subred.
+	\end{itemize}
+	
+Opcionalmente, el servidor DHCP podrá proporcionar otros parámetros de configuración tales como:
+
+
+	\begin{itemize}
+		\item Puerta de enlace 
+		\item Servidores DNS
+		\item Muchos otros párametros más
+	\end{itemize}
+	
+\section{Definiciones.}	
+
+Antes de comenzar con los procesos de instalación y configuración de nuestro servidor DHCP, vamos a definir algunos términos que utilizaremos a lo largo de dicho proceso. \\
+\\
+
+\textbf{Ámbito servidor DHCP: } Un ámbito es un agrupamiento administrativo de equipos o clientes de una subred que utilizan el servicio DHCP.\\
+\\
+\textbf{Rango servidor DHCP: } Un rango de DHCP está definido por un grupo de direcciones IP en una subred determinada, como por ejemplo de 192.168.0.1 a 192.168.0.254, que el servidor DHCP puede conceder a los clientes.\\
+\\
+\textbf{Concesión o alquiler de direcciones: } es un período de tiempo que los servidores DHCP especifican, durante el cual un equipo cliente puede utilizar una dirección IP asignada.\\
+\\
+\textbf{Reserva de direcciones IP: } Consiste en reservar algunas direcciones IP para asignárselas siempre a los mismos PCs clientes de forma que cada uno siempre reciba la misma dirección IP. Se suele utilizar para asignar a servidores o PCs concretos la misma dirección siempre. Es similar a configurar una dirección IP estática pero de forma automática desde el servidor DHCP. En el servidor se asocian direcciones MAC a direcciones IP. Es una opción muy interesante para asignar a ciertos PCs (servidores, impresoras de red, PCs especiales...) siempre la misma IP.\\
+\\
+
+
+\section{Requerimientos.}
 	A continuación se hace mención de los requerimientos necesarios para iniciar la instalación.
 	\begin{itemize}
 		\item Sistema operativo Debian GNU/Linux 7 whezzy.
 		\item Tener actualizado los repositorios.
 		\item Deshabilitar el DHCP del router a utilizar (módem en su defecto).
-		\item Habilitar la Ip estática tanto en el servidor como en el módem.
+		\item Habilitar la IP estática tanto en el servidor como en el módem.
 	\end{itemize}		
 	
-\section{Instalación del ISC DHCP}
-En Debian GNU/Linux, el paquete de software que contiene el servidor DHCP de ISC (Internet System Consortium) se denomina isc-dhcp-server y para su instalación procedemos de la siguiente manera:
+	
+\section{Instalación del ISC DHCP.}
+En Debian GNU/Linux, el paquete de software que contiene el servidor DHCP de ISC (Internet System Consortium) se denomina isc-dhcp-server y para su instalación procedemos de la siguiente manera (considere antes de ingresar el comando, tener permisos de super usuario)  :
 	
 	\begin{listing}[style=consola, numbers=none]
 	    $  apt-get install isc-dhcp-server
